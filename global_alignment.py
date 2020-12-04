@@ -3,16 +3,18 @@ from Bio import SeqIO
 from Bio.Blast import NCBIWWW
 from Bio import pairwise2
 
+# Input fasta file
+filename = "____fasta_file____.fna"
 
 '''
 
-Separate sequences in fasta file into different files
+Separate sequences in fasta file and assign to different files
 
 '''
 
-records = SeqIO.parse('____file____.fna', 'fasta')
+records = SeqIO.parse(filename, 'fasta')
 
-#split fasta file into two groups
+# Split fasta file into two groups
 def split_even(records,n):
     step = len(records)//n
     grouped = []
@@ -25,12 +27,12 @@ def split_even(records,n):
 
 n = 2
 records = []
-for record in SeqIO.parse('____file____.fna', 'fasta'):
+for record in SeqIO.parse(filename, 'fasta'):
     records.append(record)
     
-batches = split_even(records,n) #splitting
+batches = split_even(records,n) 
      
-#write each sequence to separate files 
+# Write each sequence to separate files 
 for i,batch in enumerate(batches):
     SeqIO.write(batch,'seq_{}.fasta'.format(i+1),'fasta')
 
