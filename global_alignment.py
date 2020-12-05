@@ -38,7 +38,7 @@ for i,batch in enumerate(batches):
     
 ''' 
 
-Begin pairwise sequence alignment
+Begin global alignment
 
 '''
 
