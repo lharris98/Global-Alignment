@@ -1,6 +1,5 @@
 import os
 from Bio import SeqIO
-from Bio.Blast import NCBIWWW
 from Bio import pairwise2
 
 # Input fasta file
